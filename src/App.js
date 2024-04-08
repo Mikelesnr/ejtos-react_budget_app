@@ -1,47 +1,69 @@
-import React from 'react';
+import React from "react";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
-//Code to import Budget.js
-import Budget from './components/Budget';
+//import Budget.js
+import Budget from "./components/Budget";
 
-// Add code to import the other components here under
+//Other components
+import AllocationForm from "./components/AllocationForm";
+import ExpenseItem from "./components/ExpenseItem";
+import ExpenseList from "./components/ExpenseList";
+import ExpenseTotal from "./components/ExpenseTotal";
+import Remaining from "./components/Remaining";
 
-
-import { AppProvider } from './context/AppContext';
+import { AppProvider } from "./context/AppContext";
 const App = () => {
-    return (
-        <AppProvider>
-            <div className='container'>
-                <h1 className='mt-3'>Company's Budget Allocation</h1>
-                    <div className='row mt-3'>
-                        {
-                            /* Add Budget component here */
-                        }        
-
-                        {
-                            /* Add Remaining component here*/
-                        }        
-
-                        {
-                            /* Add ExpenseTotal component here */
-                        }        
-                       
-                        {
-                            /* Add ExpenseList component here */
-                        }         
-
-                        {
-                            /* Add ExpenseItem component here */
-                        }        
-
-                        {
-                            /* Add AllocationForm component here under */
-                        }        
-
-                </div>
+  return (
+    <AppProvider>
+      <div className="container">
+        <h1 className="mt-3">Company's Budget Allocation</h1>
+        <div className="row mt-3">
+             {" "}
+          {
+            // Budget component
+            <div className="col-sm">
+              <Budget />
             </div>
-        </AppProvider>
-    );
+          }
+             {" "}
+          {
+            //Remaining component
+            <div className="col-sm">
+              <Remaining />
+            </div>
+          }
+             {" "}
+          {
+            //ExpenseTotal component
+            <div className="col-sm">
+              <ExpenseTotal />
+            </div>
+          }
+             {" "}
+          {
+            // Add ExpenseList component here
+            <div>
+              <ExpenseList />
+            </div>
+          }
+             {" "}
+          {
+            //ExpenseItem component here
+            <div>
+              <ExpenseItem />
+            </div>
+          }
+             {" "}
+          {
+            // AllocationForm component
+            <div>
+              <AllocationForm />
+            </div>
+          }
+        </div>
+      </div>
+    </AppProvider>
+  );
 };
 export default App;
